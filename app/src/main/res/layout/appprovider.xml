@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:layout_margin="0dp"
+    android:padding="0dp" >
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp">
+	
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+	        android:text="@string/appointments"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:paddingTop="5dp" />
+	    
+	    <ImageButton
+	            android:id="@+id/settings"
+	            android:layout_width="32dp"
+	            android:layout_height="32dp"
+	            android:paddingRight="20dp"
+	            android:paddingLeft="20dp"
+	            android:layout_marginRight="50dp"
+	            android:layout_gravity="right|top"
+	            android:background="@drawable/settings_btn" />
+   	    
+	    <ImageButton
+	            android:id="@+id/refresh"
+	            android:layout_width="32dp"
+	            android:layout_height="32dp"
+	            android:paddingRight="20dp"
+	            android:paddingLeft="20dp"
+	            android:layout_marginRight="10dp"
+	            android:layout_gravity="right|top"
+	            android:background="@drawable/refresh_btn" />
+    
+     </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+   		android:id="@+id/linearLayoutApp"
+        >
+	            
+	    <TextView
+		    android:id="@+id/textRow1"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" />
+	    <TextView
+		    android:id="@+id/textRow2"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" />
+	    <TextView
+		    android:id="@+id/textRow3"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" />
+	    <TextView
+		    android:id="@+id/textRow4"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" />
+    </LinearLayout>
+       
+</LinearLayout>
