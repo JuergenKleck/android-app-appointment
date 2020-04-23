@@ -20,7 +20,7 @@ android {
         applicationId "info.simplyapps.app.appointment"
         minSdkVersion 24
         targetSdkVersion 29
-        versionCode = 15
+        versionCode = 16
         versionName = '1.4.0'
         signingConfig signingConfigs.release
     }
