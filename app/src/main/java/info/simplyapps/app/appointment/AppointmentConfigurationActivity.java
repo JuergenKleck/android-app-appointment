@@ -1,6 +1,6 @@
 package info.simplyapps.app.appointment;
 
-import android.app.Activity;
+import android.Manifest;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
@@ -15,11 +15,37 @@ import android.widget.RemoteViews;
 import android.widget.TableLayout;
 
 import info.simplyapps.app.appointment.storage.StorageProvider;
+import info.simplyapps.appengine.screens.GenericScreenTemplate;
 
-public class AppointmentConfigurationActivity extends Activity {
+public class AppointmentConfigurationActivity extends GenericScreenTemplate {
 
     private TableLayout lTable;
     private int mAppWidgetId;
+
+    @Override
+    public int getScreenLayout() {
+        return R.layout.configure;
+    }
+
+    @Override
+    public boolean isFullScreen() {
+        return false;
+    }
+
+    @Override
+    public void prepareStorage(Context context) {
+
+    }
+
+    @Override
+    public void onPermissionResult(String permission, boolean granted) {
+        if (granted) {
+            if (AppointmentWidgetProvider.storeData.calendarList.isEmpty()) {
+                AppointmentWidgetUpdater.getCalendars(getApplicationContext());
+            }
+            updateLists();
+        }
+    }
 
     /**
      * Called when the activity is first created.
@@ -28,10 +54,9 @@ public class AppointmentConfigurationActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.configure);
+        permissionHelper.checkPermission(getApplicationContext(), this, Manifest.permission.READ_CALENDAR, Boolean.TRUE);
 
         lTable = findViewById(R.id.tableLayoutCalendars);
-
         Button bAdd = findViewById(R.id.btn_close);
         bAdd.setOnClickListener(onButtonClose);
 
@@ -47,7 +72,6 @@ public class AppointmentConfigurationActivity extends Activity {
             AppointmentWidgetUpdater.getCalendars(getApplicationContext());
         }
         updateLists();
-
     }
 
     public void updateLists() {

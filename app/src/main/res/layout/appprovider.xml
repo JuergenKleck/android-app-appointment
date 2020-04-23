@@ -12,14 +12,15 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:paddingLeft="15dp">
-	
-	    <TextView
-	        android:id="@+id/textView1"
-	        android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-	        android:text="@string/appointments"
-	        android:textAppearance="?android:attr/textAppearanceMedium"
-	        android:paddingTop="5dp" />
+
+		<TextView
+			android:id="@+id/textView1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="5dp"
+			android:text="@string/appointments"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:textColor="#FFFFFF" />
 	    
 	    <ImageButton
 	            android:id="@+id/settings"

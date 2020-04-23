@@ -1,14 +1,17 @@
 package info.simplyapps.app.appointment;
 
+import android.Manifest;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.CalendarContract;
 import android.widget.RemoteViews;
+
+import androidx.core.content.ContextCompat;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -70,24 +73,27 @@ class AppointmentWidgetUpdater {
     }
 
     private static void processCalendars(Context context) {
-        String[] projection = new String[]{CalendarContract.Calendars._ID, CalendarContract.Calendars.CALENDAR_DISPLAY_NAME};
-        Uri calendarUri = Uri.parse("content://com.android.calendar/calendars");
-        Cursor managedCursor = context.getContentResolver().query(calendarUri, projection, null, null, null);    //all calendars
-        //Cursor managedCursor = context.getContentResolver().query(calendarUri, projection, "selected=1", null, null);   //active calendars
-        assert managedCursor != null;
-        if (managedCursor.moveToFirst()) {
-            String calName;
-            String calId;
-            int nameCol = managedCursor.getColumnIndex(projection[1]);
-            int idCol = managedCursor.getColumnIndex(projection[0]);
-            do {
-                calName = managedCursor.getString(nameCol);
-                calId = managedCursor.getString(idCol);
-                Calendars cal = new Calendars(calName, calId);
-                if (!AppointmentWidgetProvider.storeData.calendarList.contains(cal)) {
-                    AppointmentWidgetProvider.storeData.calendarList.add(cal);
-                }
-            } while (managedCursor.moveToNext());
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.READ_CALENDAR)
+                == PackageManager.PERMISSION_GRANTED) {
+            String[] projection = new String[]{CalendarContract.Calendars._ID, CalendarContract.Calendars.CALENDAR_DISPLAY_NAME};
+            Uri calendarUri = Uri.parse("content://com.android.calendar/calendars");
+            Cursor managedCursor = context.getContentResolver().query(calendarUri, projection, null, null, null);    //all calendars
+            //Cursor managedCursor = context.getContentResolver().query(calendarUri, projection, "selected=1", null, null);   //active calendars
+            assert managedCursor != null;
+            if (managedCursor.moveToFirst()) {
+                String calName;
+                String calId;
+                int nameCol = managedCursor.getColumnIndex(projection[1]);
+                int idCol = managedCursor.getColumnIndex(projection[0]);
+                do {
+                    calName = managedCursor.getString(nameCol);
+                    calId = managedCursor.getString(idCol);
+                    Calendars cal = new Calendars(calName, calId);
+                    if (!AppointmentWidgetProvider.storeData.calendarList.contains(cal)) {
+                        AppointmentWidgetProvider.storeData.calendarList.add(cal);
+                    }
+                } while (managedCursor.moveToNext());
+            }
         }
     }
 
