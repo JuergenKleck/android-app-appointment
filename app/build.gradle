@@ -18,9 +18,9 @@ android {
 
     defaultConfig {
         applicationId "info.simplyapps.app.appointment"
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 29
-        versionCode = 14
+        versionCode = 17
         versionName = '1.4.0'
         signingConfig signingConfigs.release
     }
@@ -41,8 +41,7 @@ android {
 }
 
 dependencies {
-    def fragment_version = "1.2.4"
-    // Java
-    implementation "androidx.fragment:fragment:$fragment_version"
-    implementation "androidx.preference:preference:1.1.0"
+    implementation "androidx.fragment:fragment:1.2.4"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation project(path: ":appEngine")
 }
