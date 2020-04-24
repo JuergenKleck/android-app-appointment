@@ -55,19 +55,23 @@
 	    <TextView
 		    android:id="@+id/textRow1"
 		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content" />
+		    android:layout_height="wrap_content"
+			android:textColor="#FFFFFF"/>
 	    <TextView
 		    android:id="@+id/textRow2"
 		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content" />
+		    android:layout_height="wrap_content"
+			android:textColor="#FFFFFF"/>
 	    <TextView
 		    android:id="@+id/textRow3"
 		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content" />
+		    android:layout_height="wrap_content"
+			android:textColor="#FFFFFF"/>
 	    <TextView
 		    android:id="@+id/textRow4"
 		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content" />
+		    android:layout_height="wrap_content"
+			android:textColor="#FFFFFF"/>
     </LinearLayout>
        
 </LinearLayout>
