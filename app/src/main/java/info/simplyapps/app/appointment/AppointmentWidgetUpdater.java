@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.widget.RemoteViews;
@@ -69,7 +70,7 @@ class AppointmentWidgetUpdater {
         views.setTextViewText(R.id.textView1, context.getString(R.string.appointments) + " (" + AppointmentWidgetProvider.events.size() + ")");
 
         appWidgetManager.updateAppWidget(appWidgetId, views);
-        views.setImageViewResource(R.id.refresh, R.drawable.refresh_anim);
+        //views.setImageViewResource(R.id.refresh, R.drawable.refresh_anim);
     }
 
     private static void processCalendars(Context context) {
