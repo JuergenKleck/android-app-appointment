@@ -47,13 +47,8 @@ public class AppointmentConfigurationActivity extends GenericScreenTemplate {
         }
     }
 
-    /**
-     * Called when the activity is first created.
-     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    public void onScreenCreate(Bundle bundle) {
         permissionHelper.checkPermission(getApplicationContext(), this, Manifest.permission.READ_CALENDAR, Boolean.TRUE);
 
         lTable = findViewById(R.id.tableLayoutCalendars);
