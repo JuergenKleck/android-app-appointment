@@ -4,7 +4,7 @@
     android:minHeight="120dp"
     android:updatePeriodMillis="21600000"
     android:initialLayout="@layout/appprovider"
-    android:configure="info.simplyapps.app.appointment.AppointmentConfigurationActivity"
+    android:configure="com.juergenkleck.android.app.appointment.AppointmentConfigurationActivity"
     android:resizeMode="horizontal|vertical"
     >
 </appwidget-provider>

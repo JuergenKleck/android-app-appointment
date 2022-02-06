@@ -1,4 +1,4 @@
-package info.simplyapps.app.appointment;
+package com.juergenkleck.android.app.appointment;
 
 import android.Manifest;
 import android.appwidget.AppWidgetManager;
@@ -14,9 +14,14 @@ import android.widget.LinearLayout;
 import android.widget.RemoteViews;
 import android.widget.TableLayout;
 
-import info.simplyapps.app.appointment.storage.StorageProvider;
-import info.simplyapps.appengine.screens.GenericScreenTemplate;
+import com.juergenkleck.android.app.appointment.storage.StorageProvider;
+import com.juergenkleck.android.appengine.screens.GenericScreenTemplate;
 
+/**
+ * Android App - Appointment
+ *
+ * Copyright 2022 by Juergen Kleck <develop@juergenkleck.com>
+ */
 public class AppointmentConfigurationActivity extends GenericScreenTemplate {
 
     private TableLayout lTable;

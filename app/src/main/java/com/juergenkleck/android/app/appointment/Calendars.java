@@ -1,8 +1,12 @@
-package info.simplyapps.app.appointment;
+package com.juergenkleck.android.app.appointment;
 
 import java.io.Serializable;
 
-
+/**
+ * Android App - Appointment
+ *
+ * Copyright 2022 by Juergen Kleck <develop@juergenkleck.com>
+ */
 public class Calendars implements Serializable {
 
     /**

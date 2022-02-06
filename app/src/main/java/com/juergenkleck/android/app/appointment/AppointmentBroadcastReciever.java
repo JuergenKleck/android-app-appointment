@@ -1,11 +1,15 @@
-package info.simplyapps.app.appointment;
+package com.juergenkleck.android.app.appointment;
 
 import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-
+/**
+ * Android App - Appointment
+ *
+ * Copyright 2022 by Juergen Kleck <develop@juergenkleck.com>
+ */
 public class AppointmentBroadcastReciever extends BroadcastReceiver {
 
     @Override

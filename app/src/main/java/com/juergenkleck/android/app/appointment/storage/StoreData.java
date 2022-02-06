@@ -1,11 +1,16 @@
-package info.simplyapps.app.appointment.storage;
+package com.juergenkleck.android.app.appointment.storage;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.simplyapps.app.appointment.Calendars;
+import com.juergenkleck.android.app.appointment.Calendars;
 
+/**
+ * Android App - Appointment
+ *
+ * Copyright 2022 by Juergen Kleck <develop@juergenkleck.com>
+ */
 public class StoreData implements Serializable {
 
     private static final long serialVersionUID = 5696810296031292823L;

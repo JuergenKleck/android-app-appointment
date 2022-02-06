@@ -1,10 +1,14 @@
-package info.simplyapps.app.appointment;
+package com.juergenkleck.android.app.appointment;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-
+/**
+ * Android App - Appointment
+ *
+ * Copyright 2022 by Juergen Kleck <develop@juergenkleck.com>
+ */
 public class AppointmentUpdateService extends Service {
 
     public Intent savedIntent;

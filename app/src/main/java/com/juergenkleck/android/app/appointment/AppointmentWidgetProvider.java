@@ -1,4 +1,4 @@
-package info.simplyapps.app.appointment;
+package com.juergenkleck.android.app.appointment;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -8,12 +8,17 @@ import android.content.Intent;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.simplyapps.app.appointment.storage.StoreData;
+import com.juergenkleck.android.app.appointment.storage.StoreData;
 
+/**
+ * Android App - Appointment
+ *
+ * Copyright 2022 by Juergen Kleck <develop@juergenkleck.com>
+ */
 public class AppointmentWidgetProvider extends AppWidgetProvider {
 
-    public static String REFRESH_ACTION = "info.simplyapps.app.appointment.AppointmentWidgetProvider.REFRESH";
-    public static String SETTINGS_ACTION = "info.simplyapps.app.appointment.AppointmentWidgetProvider.SETTINGS";
+    public static String REFRESH_ACTION = "com.juergenkleck.android.app.appointment.AppointmentWidgetProvider.REFRESH";
+    public static String SETTINGS_ACTION = "com.juergenkleck.android.app.appointment.AppointmentWidgetProvider.SETTINGS";
 
     public static List<CalendarEntry> events = new ArrayList<>();
     public static StoreData storeData = new StoreData();

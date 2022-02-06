@@ -1,4 +1,4 @@
-package info.simplyapps.app.appointment.storage;
+package com.juergenkleck.android.app.appointment.storage;
 
 import android.content.Context;
 
@@ -11,6 +11,11 @@ import java.io.ObjectOutputStream;
 
 /**
  * Class which stores data into the internal Storage of the Android system
+ *
+ *
+ * Android App - Appointment
+ *
+ * Copyright 2022 by Juergen Kleck <develop@juergenkleck.com>
  */
 public class StorageProvider {
 

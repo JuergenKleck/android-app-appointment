@@ -1,4 +1,4 @@
-package info.simplyapps.app.appointment;
+package com.juergenkleck.android.app.appointment;
 
 import android.Manifest;
 import android.app.PendingIntent;
@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.widget.RemoteViews;
@@ -21,9 +20,14 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import info.simplyapps.app.appointment.storage.StorageProvider;
-import info.simplyapps.app.appointment.storage.StoreData;
+import com.juergenkleck.android.app.appointment.storage.StorageProvider;
+import com.juergenkleck.android.app.appointment.storage.StoreData;
 
+/**
+ * Android App - Appointment
+ *
+ * Copyright 2022 by Juergen Kleck <develop@juergenkleck.com>
+ */
 class AppointmentWidgetUpdater {
 
     static void updateAppWidget(Context context) {
